@@ -28,7 +28,7 @@ export const authenticate = async ({ username, password }: AuthParams): Promise<
     }
   });
 
-  console.log('Response from authenticate:', response.data); // Ajout de journalisation pour le débogage
+  console.log('Response from authenticate:', response.data); 
 
   return response.data;
 };
@@ -40,7 +40,7 @@ export const fetchAccounts = async (token: string): Promise<AccountsResponse> =>
     }
   });
 
-  console.log('fetchAccounts response:', response.data); // Ajout de journalisation pour le débogage
+  console.log('fetchAccounts response:', response.data); 
 
   return response.data;
 };
