@@ -44,7 +44,7 @@ const Auth: React.FC = () => {
     });
   };
 
-  console.log('Token in Auth Component:', token); // Ajout de journalisation pour le débogage
+  console.log('Token in Auth Component:', token);
 
   return (
     <div>
@@ -75,16 +75,16 @@ interface AccountsProps {
 }
 
 const Accounts: React.FC<AccountsProps> = ({ token }) => {
-  console.log('Accounts Component Token:', token); // Ajout de journalisation pour le débogage
+  console.log('Accounts Component Token:', token);
 
   const { data, error, isLoading }: UseQueryResult<AccountsResponse, Error> = useQuery({
     queryKey: ['accounts', token],
     queryFn: () => fetchAccounts(token),
-    enabled: !!token, // Assurez-vous que la requête n'est exécutée que si le token est disponible
+    enabled: !!token, 
   });
 
-  console.log('Data:', data); // Ajout de journalisation pour le débogage
-  console.log('Error:', error); // Ajout de journalisation pour le débogage
+  console.log('Data:', data); 
+  console.log('Error:', error); 
 
   if (isLoading) {
     return <p>Chargement des comptes...</p>;
