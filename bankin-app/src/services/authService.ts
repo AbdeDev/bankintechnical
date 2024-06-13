@@ -21,26 +21,27 @@ interface AccountsResponse {
 }
 
 export const authenticate = async ({ username, password }: AuthParams): Promise<AuthResponse> => {
-  const response = await axios.get<AuthResponse>(`${API_URL}/user/login`, {
+  const response = await axios.get(`${API_URL}/user/login`, {
     params: {
       username,
       password
     }
   });
 
-  console.log('Response from authenticate:', response.data); 
+  console.log('Response from authenticate:', response.data);
 
-  return response.data;
+  const access_token = response.data.token || response.data; 
+  return { access_token };
 };
 
-export const fetchAccounts = async (token: string): Promise<AccountsResponse> => {
-  const response = await axios.get<AccountsResponse>(`${API_URL}/accounts`, {
+export const fetchAccounts = async (token: string, username: string): Promise<AccountsResponse> => {
+  const response = await axios.get<AccountsResponse>(`${API_URL}/user/${username}/accounts`, {
     headers: {
       Authorization: `Bearer ${token}`
     }
   });
 
-  console.log('fetchAccounts response:', response.data); 
+  console.log('fetchAccounts response:', response.data);
 
   return response.data;
 };

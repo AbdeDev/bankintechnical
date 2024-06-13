@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .top-bar {
+    background-color: #50BAFF;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 24px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .auth-section, .accounts-section {
+    text-align: center;
+  }
+  
+  .auth-section h1, .accounts-section h1 {
+    color: #00213C;
+    margin-bottom: 20px;
+  }
+  
+  .auth-section input, .auth-section button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .auth-section button {
+    background-color: #00213C;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .auth-section button:hover {
+    background-color: #004080;
+  }
+  
+  .accounts-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+  }
+  
+  .accounts-section ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .footer {
+    background-color: #00213C;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
