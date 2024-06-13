@@ -13,19 +13,20 @@ interface AccountsResponse {
 
 interface AccountsProps {
   token: string;
+  username: string;
 }
 
-const Accounts: React.FC<AccountsProps> = ({ token }) => {
-  console.log('Accounts Component Token:', token); 
+const Accounts: React.FC<AccountsProps> = ({ token, username }) => {
+  console.log('Accounts Component Token:', token);
 
   const { data, error, isLoading }: UseQueryResult<AccountsResponse, Error> = useQuery({
     queryKey: ['accounts', token],
-    queryFn: () => fetchAccounts(token),
-    enabled: !!token, 
+    queryFn: () => fetchAccounts(token, username), // Passez le username ici
+    enabled: !!token,
   });
 
-  console.log('Data:', data); 
-  console.log('Error:', error); 
+  console.log('Data:', data);
+  console.log('Error:', error);
 
   if (isLoading) {
     return <p>Chargement des comptes...</p>;
